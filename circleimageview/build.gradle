@@ -10,8 +10,8 @@ ext {
 
     libraryDescription = 'Round Image'
 
-    siteUrl = 'https://github.com/my-sunshine/FaceDemo'
-    gitUrl = 'https://github.com/my-sunshine/FaceDemo.git'
+    siteUrl = 'https://github.com/my-sunshine/RoundImageViewDemo'
+    gitUrl = 'https://github.com/my-sunshine/RoundImageViewDemo.git'
 
     libraryVersion = '0.1.1'
 
