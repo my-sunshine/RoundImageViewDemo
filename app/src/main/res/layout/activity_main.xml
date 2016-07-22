@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.liyi.roundimageviewdemo.MainActivity">
+
+
+    <!--<com.liyi.roundimageviewdemo.view.RoundImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/test2"
+        app:round_type="round"
+        app:round_radius="30dp"
+        app:round_border_width="5dp"
+        app:round_border_color="@color/colorAccent"
+        android:layout_margin="20dp"
+
+
+        />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/test"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#b44242"/>
+
+    <com.liyi.roundimageviewdemo.view.RoundImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/test"
+        app:round_border_width="2dp"
+        app:round_border_color="@color/colorAccent"
+        app:round_type="circle"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+    <com.liyi.roundimageviewdemo.utils.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/test"
+        app:round_border_width="1dp"
+        app:round_border_color="#b44242"
+        app:round_type="round"
+        app:round_radius="10dp"
+
+        />-->
+
+    <com.liyi.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image12"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/test"
+        app:round_border_width="2dp"
+        app:round_border_color="#b44242"
+        app:round_type="round"
+        app:round_radius="10dp"
+
+        />
+
+
+    <com.liyi.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_imag1e12"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/test"
+        app:round_border_width="2dp"
+        app:round_border_color="#b44242"
+
+        />
+
+</LinearLayout>
