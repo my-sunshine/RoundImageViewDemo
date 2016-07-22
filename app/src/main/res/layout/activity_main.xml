@@ -67,8 +67,8 @@
     <com.liyi.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image12"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_marginTop="20dp"
@@ -76,13 +76,13 @@
         android:src="@drawable/test"
         app:round_border_width="2dp"
         app:round_border_color="#b44242"
-        app:round_type="round"
-        app:round_radius="10dp"
+
 
         />
 
-
-    <com.liyi.circleimageview.CircleImageView
+ <!--   app:round_type="round"
+    app:round_radius="10dp"-->
+    <!--<com.liyi.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_imag1e12"
         android:layout_width="match_parent"
@@ -93,7 +93,22 @@
         android:src="@drawable/test"
         app:round_border_width="2dp"
         app:round_border_color="#b44242"
-
         />
 
+    <com.liyi.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@android:color/holo_blue_dark"
+        app:round_border_width="2dp"
+        app:round_border_color="#b44242"
+        app:round_type="round"
+        app:round_radius="10dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        />-->
 </LinearLayout>

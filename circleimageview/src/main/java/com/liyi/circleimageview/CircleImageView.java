@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.ImageView;
 
 public class CircleImageView extends ImageView {
@@ -44,15 +45,16 @@ public class CircleImageView extends ImageView {
     private final Paint mBitmapPaint = new Paint();
     private final Paint mBorderPaint = new Paint();
 
-    private int mBorderColor = DEFAULT_BORDER_COLOR;
-    private int mBorderWidth = DEFAULT_BORDER_WIDTH;
+    private int mBorderColor;
+    private int mBorderWidth;
+    private int mAngle;
+    private int mType;
 
     private Bitmap mBitmap;
     private BitmapShader mBitmapShader;
     private int mBitmapWidth;
     private int mBitmapHeight;
-    private int borderRadius;
-    private int type;
+
 
     private float mDrawableRadius;
     private float mBorderRadius;
@@ -73,21 +75,17 @@ public class CircleImageView extends ImageView {
         super(context, attrs, defStyle);
         Log.i("CircleImageView", "CircleImageView");
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RoundImageView, defStyle, 0);
-
         mBorderWidth = a.getDimensionPixelSize(R.styleable.RoundImageView_round_border_width, DEFAULT_BORDER_WIDTH);
-        mBorderColor = a.getColor(R.styleable.RoundImageView_round_border_color, DEFAULT_BORDER_COLOR);
-        borderRadius = a.getDimensionPixelSize(R.styleable.RoundImageView_round_radius, DEFAULT_RADIUS);
-
-        type=a.getInt(R.styleable.RoundImageView_round_type, DEFAULT_TYPE_CIRCLE);
+        mBorderColor = a.getColor(R.styleable.RoundImageView_round_border_color, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,DEFAULT_BORDER_COLOR,context.getResources().getDisplayMetrics()));
+        mAngle = a.getDimensionPixelSize(R.styleable.RoundImageView_round_radius, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,DEFAULT_RADIUS,context.getResources().getDisplayMetrics()));
+        mType=a.getInt(R.styleable.RoundImageView_round_type, DEFAULT_TYPE_CIRCLE);
         a.recycle();
-
         init();
     }
 
     private void init() {
         super.setScaleType(SCALE_TYPE);
         mReady = true;
-
         if (mSetupPending) {
             setup();
             mSetupPending = false;
@@ -101,16 +99,16 @@ public class CircleImageView extends ImageView {
             return;
         }
 
-        if(type==DEFAULT_TYPE_CIRCLE){
+        if(mType==DEFAULT_TYPE_CIRCLE){
             canvas.drawCircle(mDrawableRect.centerX(), mDrawableRect.centerY(), mDrawableRadius, mBitmapPaint);
             if (mBorderWidth > 0) {
                 canvas.drawCircle(mBorderRect.centerX(), mBorderRect.centerY(), mBorderRadius, mBorderPaint);
             }
         }else{
 
-            canvas.drawRoundRect(mDrawableRect, borderRadius,borderRadius, mBitmapPaint);
+            canvas.drawRoundRect(mDrawableRect, mAngle,mAngle, mBitmapPaint);
             if (mBorderWidth > 0) {
-                canvas.drawRoundRect(mBorderRect, borderRadius,borderRadius, mBorderPaint);
+                canvas.drawRoundRect(mBorderRect, mAngle,mAngle, mBorderPaint);
             }
 
         }
@@ -254,16 +252,14 @@ public class CircleImageView extends ImageView {
         mDrawableRect.set(mBorderRect);
 
         if (mBorderWidth > 0) {
-            if(type==DEFAULT_TYPE_CIRCLE){
+            if(mType==DEFAULT_TYPE_CIRCLE){
                 mDrawableRect.inset(mBorderWidth - 1.0f, mBorderWidth - 1.0f);
             }else{
                 float borderW=((float)mBorderWidth)/2;
                 mDrawableRect.inset(borderW- 1.0f, borderW- 1.0f);
             }
-
         }
         mDrawableRadius = Math.min(mDrawableRect.height() / 2.0f, mDrawableRect.width() / 2.0f);
-
         updateShaderMatrix();
         invalidate();
     }
@@ -280,7 +276,7 @@ public class CircleImageView extends ImageView {
         int availableWidth  = getWidth() - getPaddingLeft() - getPaddingRight();
         int availableHeight = getHeight() - getPaddingTop() - getPaddingBottom();
 
-        if(type==DEFAULT_TYPE_CIRCLE){
+        if(mType==DEFAULT_TYPE_CIRCLE){
 
             int sideLength = Math.min(availableWidth, availableHeight);
 

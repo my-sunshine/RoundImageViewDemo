@@ -51,4 +51,18 @@
 
 
 ####图片
+
 ![](https://github.com/my-sunshine/RoundImageViewDemo/raw/master/app/img/img2.png)  
+
+![](https://github.com/my-sunshine/RoundImageViewDemo/raw/master/app/img/img3.png)  
+
+
+####说明：
+
+1、TileMode：（一共有三种）
+    （1）CLAMP：如果渲染器超出原始边界范围，会复制范围内边缘染色。
+    （2）REPEAT：横向和纵向的重复渲染器图片，平铺。
+    （3）MIRROR：横向和纵向的重复渲染器图片，这个和REPEAT 重复方式不一样，他是以镜像方式平铺。
+为BitmapShader设置一个matrix，去适当的放大或者缩小图片，不会让“ view的宽或者高大于我们的bitmap宽或者高 ”
+
+2、
