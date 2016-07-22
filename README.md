@@ -44,5 +44,7 @@
 ```
 
 ##参考文件：
+
 [hdodenhof/CircleImageView](https://github.com/hdodenhof/CircleImageView "hdodenhof/CircleImageView")  
+
 [Android BitmapShader 实战 实现圆形、圆角图片](http://blog.csdn.net/lmj623565791/article/details/41967509/ "Android BitmapShader 实战 实现圆形、圆角图片示")  
